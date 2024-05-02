@@ -1,4 +1,4 @@
-package Ders4;
+package Ders4.DersPraktika2;
 
 public class Task1 {
     public static void main(String[] args) {

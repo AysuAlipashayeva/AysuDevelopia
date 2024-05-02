@@ -1,4 +1,4 @@
-package Ders4;
+package Ders4.DersPraktika2;
 
 import java.util.Scanner;
 

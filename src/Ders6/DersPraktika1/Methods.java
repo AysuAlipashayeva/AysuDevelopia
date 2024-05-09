@@ -6,6 +6,8 @@ public class Methods {
     public static void main(String[] args) {
         Methods print = new Methods();
         print.printName(4, "Aysu");
+        print.printName(5,"book");
+        print.printName(2,"Computer");
     }
 
     void printName(int count, String name) {

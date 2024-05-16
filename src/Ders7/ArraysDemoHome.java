@@ -2,7 +2,7 @@ package Ders7;
 
 public class ArraysDemoHome {
     public static void main(String[] args) {
-        int[] numbers = {27, 44, 56, 73};
+        int[] numbers = {44, 73, 56, 27};
 
         int cem = 0;
         int edediorta = 0;
@@ -29,6 +29,23 @@ public class ArraysDemoHome {
             System.out.println(number);
         }
 
+        boolean swapped = true;
+        int counter = 1;
+        while (swapped) {
+            swapped = false;
+            for (int j = 0; j < numbers.length - counter; j++) {
+                if (numbers[j] < numbers[j + 1]) {
+                    swapped = true;
+                    int temp = numbers[j];
+                    numbers[j] = numbers[j + 1];
+                    numbers[j + 1] = temp;
+                }
+            }
+            counter++;
+        }
+        for (int j : numbers) {
+            System.out.println("swapped:"+j);
+        }
         edediorta = cem / numbers.length;
         System.out.println("Massivin elementlerinin edediortasi: " + edediorta);
 

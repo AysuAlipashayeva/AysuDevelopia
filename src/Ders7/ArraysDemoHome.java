@@ -6,8 +6,8 @@ public class ArraysDemoHome {
 
         int cem = 0;
         int edediorta = 0;
-        int maxElement = 0;
-        int minElement = 100;
+        int maxElement = numbers[0];
+        int minElement = numbers[0];
 
         for (int i = 0; i < numbers.length; i++) {
             cem += numbers[i];

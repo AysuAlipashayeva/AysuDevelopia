@@ -12,7 +12,6 @@ public class Book {
 	private Integer id;
 	private String name;
 	private String description;
-	private Double price;
 	private String author;
 	private Integer pageCount;
 	private String image;
@@ -34,12 +33,7 @@ public class Book {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public Double getPrice() {
-		return price;
-	}
-	public void setPrice(Double price) {
-		this.price = price;
-	}
+	
 	public String getAuthor() {
 		return author;
 	}

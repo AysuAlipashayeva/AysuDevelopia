@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title th:text="${header}">New Book</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<style>#book-register-form{width:300px;margin:auto;}</style>
+</head>
+<body>	
+	<div th:replace="menu :: menu"></div>
+	<h1 th:text="${header}" style="text-align: center; color: green;">New Book</h1>	
+	
+<form th:action="@{/books/new-book-process}" method="POST" th:object="${book}" id="book-register-form">	
+	
+	<input type="hidden" th:field="*{id}"/>
+	
+<div class ="form-group">
+	<label for="book-name">Name: </label>
+	<input class="form-control" id="book-name" th:field="*{name}"/>
+</div>
+
+<div class ="form-group">
+	<label for="book-description">Description: </label>
+	<textarea class="form-control" id="book-description" th:field="*{description}"></textarea>
+</div>
+
+
+<div class ="form-group">
+	<label for="book-price">Price: </label>
+	<input class="form-control" type="number" id="book-price" th:field="*{price}"/>
+</div>
+
+
+<div class ="form-group">
+	<label for="book-author">Author: </label>
+	<input class="form-control" id="book-author" th:field="*{author}"/>
+</div>
+
+<div class ="form-group">
+	<label for="book-page-count">Page count: </label>
+	<input class="form-control" type="number" id="book-page-count" th:field="*{pageCount}"/>
+</div>
+
+<input class="btn btn-success" type="submit" value="Save" />
+
+</form>
+<a th:href="@{/books}">List of books</a>
+
+</body>	
+</html>

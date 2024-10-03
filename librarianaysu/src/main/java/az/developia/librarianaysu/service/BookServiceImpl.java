@@ -1,5 +1,7 @@
 package az.developia.librarianaysu.service;
 
+import org.springframework.stereotype.Service;
+
 import az.developia.librarianaysu.entity.BookEntity;
 import az.developia.librarianaysu.repository.BookRepository;
 import az.developia.librarianaysu.request.BookAddRequestDTO;
@@ -8,6 +10,7 @@ import az.developia.librarianaysu.response.BookResponseDTO;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
+@Service
 public class BookServiceImpl implements BookService {
 	private final BookRepository repository;
 

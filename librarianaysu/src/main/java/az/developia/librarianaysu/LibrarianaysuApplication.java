@@ -1,13 +1,13 @@
-package az.developia.librarian_aysu;
+package az.developia.librarianaysu;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LibrarianAysuApplication {
+public class LibrarianaysuApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LibrarianAysuApplication.class, args);
+		SpringApplication.run(LibrarianaysuApplication.class, args);
 	}
 
 }

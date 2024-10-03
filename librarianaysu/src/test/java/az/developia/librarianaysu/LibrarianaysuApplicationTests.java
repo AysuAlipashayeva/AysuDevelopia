@@ -1,10 +1,10 @@
-package az.developia.librarian_aysu;
+package az.developia.librarianaysu;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class LibrarianAysuApplicationTests {
+class LibrarianaysuApplicationTests {
 
 	@Test
 	void contextLoads() {

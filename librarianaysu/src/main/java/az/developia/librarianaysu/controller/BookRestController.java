@@ -16,10 +16,12 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/books")
 @RequiredArgsConstructor
 public class BookRestController {
+	
 	private final BookService service;
 	
 	@PostMapping
 	public void add(@Valid @RequestBody BookAddRequestDTO req, BindingResult br) {
+		req.setAuthor(req.getAuthor().trim());
 		if (br.hasErrors()) {
 			throw new OurException("the information isn't complete","",br);
 		}

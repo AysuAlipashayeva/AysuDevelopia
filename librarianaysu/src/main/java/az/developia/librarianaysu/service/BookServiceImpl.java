@@ -18,7 +18,6 @@ public class BookServiceImpl implements BookService {
 	public void add(BookAddRequestDTO req) {
 		BookEntity entity = new BookEntity();
 			entity.setName(req.getName());
-			entity.setPrice(req.getPrice());
 			entity.setPageCount(req.getPageCount());
 			entity.setAuthor(req.getAuthor());
 			repository.save(entity);

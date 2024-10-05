@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import az.developia.librarianaysu.request.BookAddRequestDTO;
 import az.developia.librarianaysu.service.BookService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -16,7 +17,7 @@ public class BookRestController {
 	private final BookService service;
 	
 	@PostMapping
-	public void add(@RequestBody BookAddRequestDTO req) {
+	public void add(@Valid @RequestBody BookAddRequestDTO req) {
 		service.add(req);
 	}
 

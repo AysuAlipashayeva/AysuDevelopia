@@ -1,4 +1,4 @@
-package az.developia.librarianaysu;
+package az.developia.librarianaysu.models;
 
 import lombok.Data;
 

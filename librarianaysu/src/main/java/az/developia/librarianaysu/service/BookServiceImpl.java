@@ -1,10 +1,13 @@
 package az.developia.librarianaysu.service;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import az.developia.librarianaysu.entity.BookEntity;
+import az.developia.librarianaysu.exception.OurException;
 import az.developia.librarianaysu.repository.BookRepository;
 import az.developia.librarianaysu.request.BookAddRequestDTO;
+import az.developia.librarianaysu.request.BookUpdateRequestDTO;
 import az.developia.librarianaysu.response.BookListResponseDTO;
 import az.developia.librarianaysu.response.BookResponseDTO;
 import lombok.RequiredArgsConstructor;
@@ -13,14 +16,15 @@ import lombok.RequiredArgsConstructor;
 @Service
 public class BookServiceImpl implements BookService {
 	private final BookRepository repository;
+	
+	private final ModelMapper mapper;
 
 	@Override
 	public void add(BookAddRequestDTO req) {
+
 		BookEntity entity = new BookEntity();
-			entity.setName(req.getName());
-			entity.setPageCount(req.getPageCount());
-			entity.setAuthor(req.getAuthor());
-			repository.save(entity);
+		mapper.map(req, entity);
+		repository.save(entity);
 
 	}
 
@@ -36,6 +40,15 @@ public class BookServiceImpl implements BookService {
 
 	@Override
 	public void deleteById(Long id) {
+
 	}
 
+	@Override
+	public void update(BookUpdateRequestDTO req) {
+		Long id = req.getId();
+		BookEntity entity = repository.findById(id).orElseThrow(() -> new OurException("book not found", "", null));
+		mapper.map(req, entity);
+		repository.save(entity);
+
+	}
 }

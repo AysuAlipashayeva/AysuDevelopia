@@ -1,7 +1,6 @@
 package az.developia.librarianaysu.handlers;
 
 import java.util.ArrayList;
-
 import java.util.List;
 
 import org.springframework.validation.BindingResult;
@@ -9,9 +8,10 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import az.developia.librarianaysu.ErrorResponse;
-import az.developia.librarianaysu.MyFE;
-import az.developia.librarianaysu.OurException;
+import az.developia.librarianaysu.exception.OurException;
+import az.developia.librarianaysu.models.MyFE;
+import az.developia.librarianaysu.response.ErrorResponse;
+
 
 @RestControllerAdvice
 public class OurExceptionHandler {

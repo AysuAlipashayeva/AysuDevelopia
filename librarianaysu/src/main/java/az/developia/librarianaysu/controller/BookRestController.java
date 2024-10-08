@@ -1,6 +1,8 @@
 package az.developia.librarianaysu.controller;
 
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -39,6 +41,13 @@ public class BookRestController {
 		}
 		
 		service.update(req);
+	}
+
+	@DeleteMapping(path="/{/id}")
+	public void delete(@PathVariable Long id) {
+		
+		
+		service.deleteById(id);
 	}
 
 }

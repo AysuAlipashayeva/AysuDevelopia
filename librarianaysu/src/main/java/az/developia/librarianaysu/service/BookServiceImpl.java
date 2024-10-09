@@ -1,6 +1,8 @@
 package az.developia.librarianaysu.service;
 
 
+
+
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +14,7 @@ import az.developia.librarianaysu.request.BookUpdateRequestDTO;
 import az.developia.librarianaysu.response.BookListResponseDTO;
 import az.developia.librarianaysu.response.BookResponseDTO;
 import lombok.RequiredArgsConstructor;
+
 
 @RequiredArgsConstructor
 @Service
@@ -36,7 +39,10 @@ public class BookServiceImpl implements BookService {
 
 	@Override
 	public BookResponseDTO findById(Long id) {
-		return null;
+		BookEntity entity = repository.findById(id).orElseThrow(() -> new OurException("book not found", "", null));
+		BookResponseDTO dto = new BookResponseDTO();
+		mapper.map(entity, dto);
+		return dto;
 	}
 
 	@Override

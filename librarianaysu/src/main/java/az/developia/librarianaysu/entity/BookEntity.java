@@ -1,5 +1,7 @@
 package az.developia.librarianaysu.entity;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -29,6 +31,8 @@ public class BookEntity {
 	private Integer pageCount;
 	
 	private String author;
+	
+	private LocalDate publishDate;
 	
 
 }

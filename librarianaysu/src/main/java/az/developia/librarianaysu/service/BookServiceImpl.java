@@ -10,6 +10,7 @@ import az.developia.librarianaysu.entity.BookEntity;
 import az.developia.librarianaysu.exception.OurException;
 import az.developia.librarianaysu.repository.BookRepository;
 import az.developia.librarianaysu.request.BookAddRequestDTO;
+import az.developia.librarianaysu.request.BookUpdateNameRequestDTO;
 import az.developia.librarianaysu.request.BookUpdateRequestDTO;
 import az.developia.librarianaysu.response.BookListResponseDTO;
 import az.developia.librarianaysu.response.BookResponseDTO;
@@ -66,5 +67,14 @@ public class BookServiceImpl implements BookService {
 		mapper.map(req, entity);
 		repository.save(entity);
 
+	}
+
+	@Override
+	public void updateName(BookUpdateNameRequestDTO req) {
+		Long id = req.getId();
+		BookEntity entity = repository.findById(id).orElseThrow(() -> new OurException("book not found", "", null));
+		mapper.map(req, entity);
+		repository.save(entity);
+		
 	}
 }

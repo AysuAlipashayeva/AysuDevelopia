@@ -3,6 +3,7 @@ package az.developia.librarianaysu.controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import az.developia.librarianaysu.exception.OurException;
 import az.developia.librarianaysu.request.BookAddRequestDTO;
+import az.developia.librarianaysu.request.BookUpdateNameRequestDTO;
 import az.developia.librarianaysu.request.BookUpdateRequestDTO;
 import az.developia.librarianaysu.response.BookListResponseDTO;
 import az.developia.librarianaysu.response.BookResponseDTO;
@@ -63,6 +65,15 @@ public class BookRestController {
 		
 		
 		return service.findAll();
+	}
+	
+	@PatchMapping
+	public void updateName(@Valid @RequestBody BookUpdateNameRequestDTO req, BindingResult br) {
+		if (br.hasErrors()) {
+			throw new OurException("the information isn't complete","",br);
+		}
+		
+		service.updateName(req);
 	}
 
 }

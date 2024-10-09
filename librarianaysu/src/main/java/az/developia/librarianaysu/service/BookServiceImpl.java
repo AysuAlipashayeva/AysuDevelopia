@@ -1,5 +1,6 @@
 package az.developia.librarianaysu.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.modelmapper.ModelMapper;
@@ -12,6 +13,7 @@ import az.developia.librarianaysu.request.BookAddRequestDTO;
 import az.developia.librarianaysu.request.BookUpdateRequestDTO;
 import az.developia.librarianaysu.response.BookListResponseDTO;
 import az.developia.librarianaysu.response.BookResponseDTO;
+import az.developia.librarianaysu.response.BookResponseDTOEntity;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
@@ -32,9 +34,15 @@ public class BookServiceImpl implements BookService {
 
 	@Override
 	public BookListResponseDTO findAll() {
-		List<BookEntity> all = repository.findAll();
+		List<BookEntity> entities = repository.findAll();
 		BookListResponseDTO dto = new BookListResponseDTO();
-		dto.setBooks(all);
+		List<BookResponseDTOEntity> dtoEntities = new ArrayList<BookResponseDTOEntity>();
+		for (BookEntity en : entities) {
+			BookResponseDTOEntity dt= new BookResponseDTOEntity();
+			mapper.map(en, dt);
+			dtoEntities.add(dt);
+				}
+		dto.setBooks(dtoEntities);
 		return dto;
 	}
 

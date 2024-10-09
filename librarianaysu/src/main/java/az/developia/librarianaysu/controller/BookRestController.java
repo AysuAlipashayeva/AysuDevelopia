@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import az.developia.librarianaysu.exception.OurException;
 import az.developia.librarianaysu.request.BookAddRequestDTO;
 import az.developia.librarianaysu.request.BookUpdateRequestDTO;
+import az.developia.librarianaysu.response.BookListResponseDTO;
 import az.developia.librarianaysu.response.BookResponseDTO;
 import az.developia.librarianaysu.service.BookService;
 import jakarta.validation.Valid;
@@ -55,6 +56,13 @@ public class BookRestController {
 		
 		
 		return service.findById(id);
+	}
+	
+	@GetMapping
+	public BookListResponseDTO findAll() {
+		
+		
+		return service.findAll();
 	}
 
 }

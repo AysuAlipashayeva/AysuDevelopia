@@ -1,7 +1,6 @@
 package az.developia.librarianaysu.service;
 
-
-
+import java.util.List;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -15,12 +14,11 @@ import az.developia.librarianaysu.response.BookListResponseDTO;
 import az.developia.librarianaysu.response.BookResponseDTO;
 import lombok.RequiredArgsConstructor;
 
-
 @RequiredArgsConstructor
 @Service
 public class BookServiceImpl implements BookService {
 	private final BookRepository repository;
-	
+
 	private final ModelMapper mapper;
 
 	@Override
@@ -34,7 +32,10 @@ public class BookServiceImpl implements BookService {
 
 	@Override
 	public BookListResponseDTO findAll() {
-		return null;
+		List<BookEntity> all = repository.findAll();
+		BookListResponseDTO dto = new BookListResponseDTO();
+		dto.setBooks(all);
+		return dto;
 	}
 
 	@Override

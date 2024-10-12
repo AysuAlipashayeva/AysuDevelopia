@@ -71,6 +71,7 @@ public class BookRestController {
 
 	@PatchMapping
 	public void updateName(@Valid @RequestBody BookUpdateNameRequestDTO req, BindingResult br) {
+		
 		if (br.hasErrors()) {
 			throw new OurException("the information isn't complete", "", br);
 		}
@@ -82,6 +83,12 @@ public class BookRestController {
 	public BookListResponseDTO findAllPagination(@PathVariable Integer begin, @PathVariable Integer length) {
 
 		return service.findAllPagination(begin, length);
+	}
+	
+	@GetMapping(path = "/name-search/{name}")
+	public BookListResponseDTO findByName(@PathVariable String name) {
+
+		return service.findByName(name);
 	}
 
 }

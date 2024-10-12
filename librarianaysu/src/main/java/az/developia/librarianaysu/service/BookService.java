@@ -21,4 +21,6 @@ public interface BookService {
 
 	BookListResponseDTO findAllPagination(Integer begin, Integer length);
 
+	BookListResponseDTO findByName(String name);
+
 }

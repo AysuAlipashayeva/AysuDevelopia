@@ -36,15 +36,8 @@ public class BookServiceImpl implements BookService {
 	@Override
 	public BookListResponseDTO findAll() {
 		List<BookEntity> entities = repository.findAll();
-		BookListResponseDTO dto = new BookListResponseDTO();
-		List<BookResponseDTOEntity> dtoEntities = new ArrayList<BookResponseDTOEntity>();
-		for (BookEntity en : entities) {
-			BookResponseDTOEntity dt = new BookResponseDTOEntity();
-			mapper.map(en, dt);
-			dtoEntities.add(dt);
-		}
-		dto.setBooks(dtoEntities);
-		return dto;
+		
+		return entitiesToDtos(entities);
 	}
 
 	@Override
@@ -81,6 +74,19 @@ public class BookServiceImpl implements BookService {
 	@Override
 	public BookListResponseDTO findAllPagination(Integer begin, Integer length) {
 		List<BookEntity> entities = repository.findAllPagination(begin, length);
+		
+		return entitiesToDtos(entities);
+	}
+
+	@Override
+	public BookListResponseDTO findByName(String name) {
+		List<BookEntity> entities = repository.findAllSearch(name);
+		
+		return entitiesToDtos(entities);
+	}
+	
+	private BookListResponseDTO entitiesToDtos(List<BookEntity> entities) {
+		
 		BookListResponseDTO dto = new BookListResponseDTO();
 		List<BookResponseDTOEntity> dtoEntities = new ArrayList<BookResponseDTOEntity>();
 		for (BookEntity en : entities) {

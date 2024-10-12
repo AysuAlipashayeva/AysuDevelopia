@@ -78,4 +78,10 @@ public class BookRestController {
 		service.updateName(req);
 	}
 
+	@GetMapping(path="/pagination/begin/{begin}/length/{length}")
+	public BookListResponseDTO findAllPagination(@PathVariable Integer begin, @PathVariable Integer length) {
+
+		return service.findAllPagination(begin, length);
+	}
+
 }

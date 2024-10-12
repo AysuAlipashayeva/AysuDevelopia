@@ -1,7 +1,5 @@
 package az.developia.librarianaysu.response;
 
-import java.time.LocalDate;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,7 +15,4 @@ public class BookResponseDTOEntity {
 
 	private String name;
 
-	private String author;
-
-	private LocalDate publishDate;
 }

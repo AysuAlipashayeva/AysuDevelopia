@@ -1,5 +1,7 @@
 package az.developia.librarianaysu.entity;
 
+import org.hibernate.annotations.Immutable;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -9,14 +11,17 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
-@Table(name = "users")
+@Table(name = "user_order_count")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserEntity {
+@Immutable
+@ToString
+public class UserViewEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -28,5 +33,7 @@ public class UserEntity {
 	private String email;
 
 	private String role;
+	
+	private Integer orderCount;
 
 }

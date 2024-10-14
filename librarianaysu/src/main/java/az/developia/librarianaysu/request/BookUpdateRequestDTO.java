@@ -1,11 +1,11 @@
 package az.developia.librarianaysu.request;
 
-import java.time.LocalDate;
+//import java.time.LocalDate;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Past;
+//import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
@@ -28,6 +28,6 @@ public class BookUpdateRequestDTO {
 	@Pattern(regexp = "[a-z]{3}", message = "author's name must be 3")
 	private String author;
 
-	@Past
-	private LocalDate publishDate;
+	//@Past
+	//private LocalDate publishDate;
 }

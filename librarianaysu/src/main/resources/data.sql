@@ -28,3 +28,28 @@ insert into users
 ('lisa_miller', 'lisaMiller654!', 'lisa.miller@example.com', 'MEMBER'), 
 ('daniel_wilson', 'danielWilson852!', 'daniel.wilson@example.com', 'MEMBER'), 
 ('sophia_taylor', 'sophiaTaylor963!', 'sophia.taylor@example.com', 'MEMBER');
+
+insert into orders (order_date, user_id) values
+(CURDATE(), 3),
+(DATE_SUB(CURDATE(), INTERVAL 1 DAY), 4),
+(DATE_SUB(CURDATE(), INTERVAL 2 DAY), 5), 
+(DATE_SUB(CURDATE(), INTERVAL 3 DAY), 6), 
+(DATE_SUB(CURDATE(), INTERVAL 4 DAY), 7), 
+(DATE_SUB(CURDATE(), INTERVAL 5 DAY), 8),
+(DATE_SUB(CURDATE(), INTERVAL 6 DAY), 9),
+(DATE_SUB(CURDATE(), INTERVAL 7 DAY), 10);
+
+insert into order_details (quantity, order_id, book_id) values
+(1, 1, 1),
+(1, 1, 3),
+(1, 2, 5),
+(1, 2, 7),
+(1, 2, 9),
+(1, 3, 11),
+(1, 3, 12),
+(1, 4, 10),
+(1, 5, 4),
+(1, 6, 8),
+(1, 6, 15),
+(1, 7, 14),
+(1, 8, 13);

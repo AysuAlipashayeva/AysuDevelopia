@@ -1,6 +1,6 @@
 package az.developia.librarianaysu.entity;
 
-import java.time.LocalDate;
+//import java.time.LocalDate;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -32,7 +32,7 @@ public class BookEntity {
 	
 	private String author;
 	
-	private LocalDate publishDate;
+	//private LocalDate publishDate;
 	
 
 }

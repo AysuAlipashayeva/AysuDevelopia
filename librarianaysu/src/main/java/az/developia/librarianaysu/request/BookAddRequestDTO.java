@@ -1,6 +1,9 @@
 package az.developia.librarianaysu.request;
 
 //import java.time.LocalDate;
+//
+//import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+//import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -23,6 +26,7 @@ public class BookAddRequestDTO {
 	@NotBlank(message = "author can't be blank")
 	private String author;
 
-	//@Past
-	//private LocalDate publishDate;
+//	@Past 
+//	@JsonSerialize(using = LocalDateSerializer.class)
+//	private LocalDate publishDate;
 }

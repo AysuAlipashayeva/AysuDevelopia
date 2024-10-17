@@ -24,5 +24,7 @@ public class UserAddRequestDTO {
 	@NotNull(message = "role is important")
 	@NotBlank(message = "role can't be blank")
 	private String role;
+	
+	
 
 }

@@ -1,6 +1,8 @@
 package az.developia.librarianaysu.entity;
 
 //import java.time.LocalDate;
+//
+//import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -22,7 +24,8 @@ public class OrderEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
-	// private LocalDate orderDate;
+	
+//	@JsonFormat(pattern = "yyyy-MM-dd")
+//	private LocalDate orderDate;
 
 }
